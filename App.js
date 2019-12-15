@@ -3,7 +3,10 @@ var app = express();
 var mysql = require("mysql");
 var con = mysql.createConnection('mysql://xxuser:welcome1@custom-mysql.gamification.svc.cluster.local:3306/sampledb');
 
-con.connect();
+con.connect(function(err){
+if(err) {
+    console.log(err);    
+});
 //var ibmcat = "select * from XXIBM_PRODUCT_CATALOG";
 //con.query(ibmcat,function(err,result,details){
 //    if(err){

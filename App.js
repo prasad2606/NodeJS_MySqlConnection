@@ -1,25 +1,25 @@
 var express = require("express");
 var app = express();
 var mysql = require("mysql");
-var baglanti = mysql.createConnection({
-host:"localhost",
+var con = mysql.createConnection({
+host:"custom-mysql.gamification.svc.cluster.local",
 port:"3306",
-user:"ertan",
-password:"ertan",
-database:"nodejs"
+user:"xxuser",
+password:"welcome1",
+database:"sampledb"
 });
 
-baglanti.connect();
-var sorgu = "select * from Users";
-baglanti.query(sorgu,function(err,result,details){
-    if(err){
-        console.log("Hata var!");
-    }
-    else{
-        console.log(result);
+con.connect();
+//var sorgu = "select * from Users";
+//con.query(sorgu,function(err,result,details){
+//    if(err){
+//        console.log("Hata var!");
+//    }
+//    else{
+//        console.log(result);
         // console.log(details); // for details 
     }
 });
-baglanti.end();
+//baglanti.end();
 
-app.listen(8000);
+app.listen(8080);

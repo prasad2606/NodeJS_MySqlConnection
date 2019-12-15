@@ -18,8 +18,8 @@ con.connect();
 //    else{
 //        console.log(result);
         // console.log(details); // for details 
-    }
-});
-//baglanti.end();
+//    }
+//});
+con.end();
 
 app.listen(8080);
